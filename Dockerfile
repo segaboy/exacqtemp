@@ -78,4 +78,6 @@ RUN wget https://s3-us-west-2.amazonaws.com/exacqdocker/exacqVisionServer-deps.d
 RUN dpkg -i exacqVisionServer-deps.deb
 RUN	dpkg -i exacqVisionServer-7.2.1.85489.deb
 
+EXPOSE 22609
+
 ENTRYPOINT "/usr/exacq/server/core"
