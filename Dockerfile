@@ -6,8 +6,6 @@ ENV DEBIAN_FRONTEND noninteractive
 #Actually user Bash!
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
-#Accepts all prompts. This avoids krb5 and exacq installer fails
-
 #Add support for 32-bit applications
 RUN dpkg --add-architecture i386
 
@@ -76,7 +74,7 @@ RUN apt-get install -yq bind9-host \
 RUN wget https://s3-us-west-2.amazonaws.com/exacqdocker/exacqVisionServer-deps.deb http://exacq.com/reseller/7.2/exacqVisionServer-7.2.1.85489.deb --user guest --password exacqvisionip
 
 RUN dpkg -i exacqVisionServer-deps.deb
-RUN	dpkg -i exacqVisionServer-7.2.1.85489.deb
+RUN dpkg -i exacqVisionServer-7.2.1.85489.deb
 
 EXPOSE 22609
 
